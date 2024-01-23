@@ -1,9 +1,20 @@
-import { Box, Grommet, Text } from 'grommet';
+import { useState } from 'react';
+import { Grommet, TextInput } from 'grommet';
+import { View } from 'grommet-icons';
 
 function App() {
+  const [showPassword, setShowPassword] = useState(false);
   return (
     <Grommet>
-      <Text>Hello world</Text>
+      <TextInput
+        placeholder="Password"
+        type={showPassword ? "text" : "password"}
+        icon={<View onClick={() => {
+          console.log('icon in TextInput clicked');
+          setShowPassword(!showPassword);
+        }}/>}
+        reverse={true}
+      />
     </Grommet>
   );
 }
