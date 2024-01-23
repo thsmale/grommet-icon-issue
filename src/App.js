@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { Grommet, TextInput } from 'grommet';
+import { Grommet, Text, TextInput } from 'grommet';
 import { View } from 'grommet-icons';
 
 function App() {
   const [showPassword, setShowPassword] = useState(false);
   return (
     <Grommet>
+      <Text>When pressing the grommet View icon I would like to show the text in the Password input field</Text>
       <TextInput
         placeholder="Password"
         type={showPassword ? "text" : "password"}
